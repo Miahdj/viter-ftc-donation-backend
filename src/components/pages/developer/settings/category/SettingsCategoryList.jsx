@@ -31,12 +31,12 @@ const SettingsCategoryList = () => {
             <tbody>
               <tr className="text-center">
                 <td colSpan="100%">
-                  <ServerError />
+                  <TableLoading cols={2} count={20} />
                 </td>
               </tr>
-              <tr classname="text-center">
-                <td colspan="100%">
-                  <TableLoading cols={2} count={20} />
+              <tr className="text-center">
+                <td colSpan="100%">
+                  <ServerError />
                 </td>
               </tr>
 

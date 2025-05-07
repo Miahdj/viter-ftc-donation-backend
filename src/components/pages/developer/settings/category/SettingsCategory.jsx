@@ -5,8 +5,15 @@ import BreadCrumbs from "../../../../partials/BreadCrumbs";
 import Footer from "../../../../partials/Footer";
 import { FaPlus } from "react-icons/fa";
 import SettingsCategoryList from "./SettingsCategoryList";
+import ModalAddSettingsCategory from "./ModalAddSettingsCategory";
 
 const SettingsCategory = () => {
+  const [isModalCategory, setIsModalCategory] = React.useState(false); //INITIAL VALUE
+
+  const [itemEdit, setItemEdit] = React.useState(null);
+
+  console.log(isModalCategory);
+
   return (
     <>
       <Header />
@@ -18,6 +25,7 @@ const SettingsCategory = () => {
           <button
             type="button"
             className="flex items-center gap-x-3 text-primary hover:underline text-sm"
+            onClick={() => setIsModalCategory(true)}
           >
             <FaPlus />
             <span>Add</span>
@@ -35,6 +43,13 @@ const SettingsCategory = () => {
         {/* FOOTER */}
         <Footer />
       </div>
+
+      {isModalCategory && (
+        <ModalAddSettingsCategory
+          itemEdit={itemEdit}
+          setIsModal={setIsModalCategory}
+        />
+      )}
     </>
   );
 };
