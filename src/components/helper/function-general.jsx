@@ -1,10 +1,10 @@
 const urlLocal = "http://localhost/react-vite/viter-ftc-donation";
 const urlLocalImg = "http://localhost/react-vite/viter-ftc-donation/public/img";
 
-export const devApiUrl = "";
-export const devBaseImg = "";
-export const devBaseUrl = "";
-export const devNavUrl = "";
+export const devApiUrl = `${urlLocal}`;
+export const devBaseImg = `${urlLocalImg}`;
+export const devBaseUrl = `${urlLocal}api/`;
+export const devNavUrl = `${urlLocal}admin/`;
 
 // dev key
 export const devKey =

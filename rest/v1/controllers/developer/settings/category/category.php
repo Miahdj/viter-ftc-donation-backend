@@ -4,7 +4,7 @@ require '../../../../core/header.php';
 // use needed functions
 require '../../../../core/functions.php';
 // use needed models
-require '';
+require '../../../../models/developer/settings/category/Category.php';
 $body = file_get_contents("php://input");
 $data = json_decode($body, true);
 
@@ -20,6 +20,13 @@ if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
     // POST OR CREATE
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = require 'create.php';
+        sendResponse($result);
+        exit;
+    }
+
+    // POST OR UPDATE
+    if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+        $result = require 'update.php';
         sendResponse($result);
         exit;
     }
